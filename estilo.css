@@ -1,0 +1,267 @@
+body {
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: black;
+    position: relative;
+}
+
+
+footer {
+    background: linear-gradient(to bottom, transparent 80%, rgba(160, 152, 152, 0.8) 100%);
+    border: solid top 0.5px rgb(207, 199, 199);
+    box-shadow: 0px 0px 20px 0px white;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    padding: 7vh;
+    color: white;
+    font-family: 'Josefin Sans Regular';
+    text-shadow: 0px 0px 10px white;
+    font-size: 3vh;
+}
+
+.fondo {
+    background-color: rgb(0, 0, 0, 0.7);
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    z-index: -1;
+    position: absolute;
+}
+
+header img {
+    max-width: 90px;
+    max-height: 90px;
+    filter: drop-shadow(0px 0px 1px white);
+}
+
+header {
+    background-color: black;
+    display: flex;
+    padding: 1vh 12vw;
+    align-items: center;
+    box-shadow: 0px 0px 20px 0px white;
+    border: solid bottom 0.5px rgb(207, 199, 199);
+    position:fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    gap: 4rem;
+
+}
+
+nav ul {
+  display: flex;
+  gap: 12rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0;
+  position: relative; /* Necesario para el pseudoelemento */
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: sans-serif;
+  position: relative;
+  white-space: nowrap;
+}
+
+nav ul li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 5px;
+  transform: scaleX(0); /* Inicialmente oculto */
+  transition: transform 0.35s ease; /* Efecto de transición */
+  bottom: 0;
+  left: 0;
+}
+
+nav ul li a:hover::before {
+  transform: scaleX(1); /* Se muestra al hacer hover */
+}
+
+nav ul li a{
+    font-family: 'Josefin Sans Regular';
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: white;
+    text-shadow: 0px 0px 10px white;
+    text-decoration: none;
+}
+
+nav ul li:last-child a {
+  margin-right: 0; /* Quita el margen derecho del último enlace */
+}
+
+.conteiner {
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    padding: 40px;
+    box-sizing: border-box;
+    margin: auto;
+
+  }
+  
+.card {
+    flex: 1;
+    height: 100%;
+    transition: all 400ms;
+    cursor: pointer;
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; /* Ajusta la altura según la cantidad de degradado que desees */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 1; /* Asegura que quede encima del fondo pero debajo del texto */
+}
+  
+.card:nth-child(odd) {
+    transform: translate(0, -20px); 
+  }
+  
+.card:nth-child(even) {
+    transform: translate(0, 20px); 
+  }
+  
+.conteiner:hover > .card:not(:hover) { 
+    filter: grayscale(100%);
+  }
+  
+.card:hover {
+    flex: 3;
+  }
+
+.card_one {
+    background-image: url(images/integrante21.jpg);
+    background-size: cover;
+    background-position: center;
+  } 
+
+.card_two {
+    background-image: url(images/integrante22.jpg);
+    background-size: cover; 
+    background-position: center;
+  }
+
+.card_three {
+    background-image: url(images/integrante23.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+.card_four {
+    background-image: url(images/integrante24.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+.card_five {
+    background-image: url(images/integrante25.png);
+    background-size: cover;
+    background-position: center;
+  }
+
+.portada {
+    background-image: url(images/image.jpg);
+    height: 65vh;
+    width: 100%;
+    background-size: cover;
+    box-sizing: border-box;
+    background-position: top;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+.titulo_portada {
+    position: absolute;
+    color: white;
+    top: 80%; /* Coloca el texto al 50% de la altura */
+    left: 50%; /* Coloca el texto al 50% del ancho */
+    transform: translate(-50%, -50%); /* Centra ajustando el desplazamiento */
+    font-size: 3rem;
+    font-family: 'Josefin sans regular';
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+
+.texto_galeria {
+    font-family: 'Josefin sans regular';
+    font-weight: 400;
+    font-size: 2vh;
+    color: white;
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+    z-index: 2;
+    text-shadow: 0px 0px 5px white;
+}
+
+.seccion_I {
+  width: 70%;
+  margin: auto;
+  height: auto;
+  padding: 3vh;
+  display: flex;
+  max-width: 1000px;
+  flex-direction: column;
+}
+
+.seccion_I p {
+  color: white;
+  font-family: 'Josefin sans regular';
+  font-weight: 300;
+  line-height: 1.5rem;
+  font-size: 20px;
+}
+
+.seccion_I h2 {
+  color: white;
+  font-family: 'Josefin sans regular';
+  font-weight: 400;
+  font-size: 4vh;
+}
+
+.imagen {
+  max-width: 40vw;
+  max-height: 30vh;
+}
+
+.texto_image {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5vw;
+  align-items: center;
+  padding: 4vh 0vh;
+}
+
+.seccion_I ul li {
+  color: white;
+  font-family: 'Josefin sans regular';
+  font-size: 3.5vh;
+  line-height: 6vh;
+  margin-right: 7vw;
+}
